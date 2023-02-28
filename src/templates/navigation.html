@@ -1,0 +1,36 @@
+<div class="ui inverted vertical head center aligned segment">
+    <div class="ui container">
+        <div class="ui large secondary inverted pointing menu">
+            
+            <a class="toc item"><i class="sidebar icon"></i></a>
+            <a class="item" id="home" href="{{ url_for('home_bp.home') }}">Home</a>
+            <a class="item" id="about" href="{{ url_for('about_bp.about') }}">About</a> 
+            <a class="item" href="https://github.com/uoa-compsci399-s1-2022/team19" target="_blank">Github</a>
+            
+            <div class="right item">
+                {% if 'user_name' not in session %}
+                <a class="ui inverted button" href="{{ url_for('authentication_bp.login') }}">Log in</a>
+                <a class="ui inverted button" href="{{ url_for('authentication_bp.register') }}">Register</a>
+                {%endif %}
+                {% if 'user_name' in session %}
+                <a class="ui inverted button" href="{{ url_for('account_bp.view_account') }}">My account</a>
+                <a class="ui inverted button" href="{{ url_for('authentication_bp.logout') }}">Logout</a>
+                {%endif %}
+            </div>
+
+            <!-- Script to change the active page based on URL -->
+            <script>
+                const url = window.location.href;
+                const result = location.pathname.split("/")[1];
+            
+                if (result == 'about'){
+                    document.getElementById('about').className = "active item"
+                }
+                else if (result == ''){
+                    document.getElementById('home').className = "active item"
+                }
+            </script>
+
+        </div>
+    </div>
+</div>

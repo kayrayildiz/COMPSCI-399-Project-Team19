@@ -1,0 +1,34 @@
+{% extends 'layout.html' %} {% block content %}
+
+  <div class="solution">
+
+      <div id="solutionH">
+      <p>Solutions(Quiz II review)</p>
+      </div>
+      <br>
+    {% for question in wrong_question%}
+      <div id="solutionQ">
+          {{question.getQ_id()}}.{{question.getQuestion()}} <br>
+      </div>
+      -{{question.getOption1()}}<br>
+      -{{question.getOption2()}}<br>
+      -{{question.getOption3()}}<br>
+      -{{question.getOption4()}}<br>
+
+      <div id="reasons">
+        <p><b>Reasons:</b> {{question.get_reason()}}</p>
+      <br>
+      <br>
+
+          </div>
+
+      <br>
+      <br>
+            {% endfor %}
+          <br>
+      </div>
+
+    <a class="ui huge primary button" href="{{ url_for('modules_bp.modules') }}">Exit</a>
+
+
+{% endblock %}

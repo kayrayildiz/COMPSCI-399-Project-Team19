@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div id="account">
+    <div class="ui vertical stripe segment">
+        <div class="ui middle aligned stackable grid container">
+            <h3 class="ui header">{{ session['user_name'] }}'s total score: {{ score }}</h3>
+
+            <div>
+                {% include 'leaderboard/leaderboard.html' %}
+            </div>
+
+            <div>
+                <a class="ui inverted button" href="{{ url_for('modules_bp.modules') }}">Play another level</a>
+    
+                <a class="ui inverted button" href="{{ url_for('account_bp.view_account') }}">View your account</a>
+                <a class="ui inverted button" href="{{ url_for('home_bp.home') }}">Home</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

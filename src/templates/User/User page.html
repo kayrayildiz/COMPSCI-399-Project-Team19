@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+{% block content %}
+<section class="ui inverted">
+
+<div class="ui card centered">
+  <div class="image">
+    <img src="{{url_for('static', filename='')}}">
+  </div>
+  <div class="content">
+      <p class="header">{{ user.user_name}} </p>
+  </div>
+</div>
+
+  <div class="ui inverted segment">
+      <h2 class="header"></h2>
+      <br>
+      <a href="">Score<h3></h3></a>
+      <br>
+  </div>
+
+
+
+    <p style="color: white">Modules Completed</p>
+    <div class="ui inverted segment padded">
+        <div class="ui inverted secondary segment padded">
+            <p></p>
+        </div>
+    </div>
+    </section>
+{% endblock %}

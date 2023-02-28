@@ -1,0 +1,23 @@
+{% if quiz_result %}
+    <p><b>Awesome! You are correct!</b></p>
+
+{% else %}
+    <p><b>Bad luck, try harder next round!</b></p>
+    <p><b>Reason:</b> {{ question.get_reason() }}</p>
+
+{% endif %}
+
+
+
+
+{% if current_page == total_questions - 1 %}
+    <p>You have completed all quizzes!!</p>
+    <a class="ui button" href="{{ url_for('home_bp.home')}}">Exit</a>
+    <a class="ui button" href="{{ url_for('leaderboard_bp.leaderboard')}}">Leaderboard</a>
+    <a class="ui button" href="{{ url_for('solution_bp.solution') }}">Review</a>
+
+
+{% else %}
+    <a class="ui button" href="{{ url_for('quiz_bp2.quiz2', page_number = next_page) }}">Next question</a>
+{% endif %}
+

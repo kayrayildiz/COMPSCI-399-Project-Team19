@@ -1,0 +1,43 @@
+{% extends 'layout.html' %} {% block content %}
+<div class="ui vertical stripe segment">
+    <div class="ui middle aligned stackable grid container">
+        <div id="about-content">
+
+            <div class="ui vertical stripe segment">
+                <div class="ui middle aligned stackable grid container">
+                    <div class="row">
+                        <div class="eight wide column">
+                        <h3 class="ui header">Walk through video</h3>
+                        <p>Are you a visual learner? Check out our tutorial video to get a better idea of how to play.</p>
+                        
+                        </div>
+                        <div class="six wide right floated column"> <!-- PUT WALKTHROUGH VIDEO HERE -->
+                            <video width="320" height="240" controls>
+                                <source src="../static/videos/walkthrough.mp4" type=video/mp4>
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br><br><br><br><br>
+            
+            
+
+            <div>
+                <H1 id="about-content-heading" style="color: #F0E43C;">How to play</H1>
+                
+                <p id="about-content-text">A step by step:</p>
+                <p>Step 1) click the "let's play" button on the home page and choose which level you would like to play first. Remember that in order to unlock the next level, you need at least 10 points gained from the last level.</p>
+                <p>Step 2) on each question click the answer you think is correct and find out whether your answer was correct or not.</p>
+                <p>Step 3) navigate through the questions using the bottom page menu.</p>
+                <p>Step 4) you can exit at any time by clicking the Exit button, or by clicking any button in the main navigation.</p>
+                
+                <br><br><br>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+

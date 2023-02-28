@@ -1,0 +1,28 @@
+<div class="ui massive labeled menu">
+    <div class="item">Dashboard</div>
+
+    <a class="active teal item">
+        <i class="inbox icon"></i>
+        Inbox
+        <div class="ui label">{{ num_emails_left }}</div>
+    </a>
+
+    <a class="item">
+        <i class="exclamation triangle icon"></i>
+        Spam
+        <div class="ui label">{{ num_spam}}</div>
+    </a>
+
+    <a class="item">
+        <i class="paper plane outline icon"></i>
+        Sent
+        <div class="ui label">{{ num_legit }}</div>
+    </a>
+
+    <a class="item" href="{{ url_for('account_bp.view_account') }}">
+        <i class="newspaper outline icon"></i>
+        {{ session['user_name'] }}'s score
+        <div class="ui label">{{ score }}</div>
+    </a>
+    <a class="item" id="home" href="{{ url_for('home_bp.home') }}">Exit</a>
+</div>

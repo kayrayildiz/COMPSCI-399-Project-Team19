@@ -1,0 +1,35 @@
+{% extends 'layout.html' %} {% block content %}
+<div id="modules">
+    <div class="ui vertical stripe quote segment">
+        <div class="ui equal width stackable internally celled grid">
+            <div class="center aligned row">
+            
+            <div class="column">
+                <h3>Level 1</h3>
+                <p>Can you spot <b>which emails are fraudulent</b> and which ones are not?</p>
+                <a class="ui huge primary button" href="{{ url_for('quiz_bp.quiz') }}">Play level 1<i class="right arrow icon"></i></a>
+            </div>
+
+            <div class="column">
+                <h3>Level 2</h3>
+                <p>Take a <b>general knowledge</b> test on Phishing</p>
+                {% if user_score > 9 %}
+                <a class="ui huge primary button" href="{{ url_for('quiz_bp2.quiz2') }}">Play level 2<i class="right arrow icon"></i></a>
+                {% else %}
+                <div class="ui huge primary button" id="inactive-button">Play level 2<i class="right arrow icon"></i></div>
+                <br><br>
+                <p style="color: #657ba3;">Oops! looks like you dont have enough points yet to play<br>this level. Play level 1 to gain enough points.</p>
+                {% endif %}
+            </div>
+
+            <div class="column">
+                <h3>Level 3</h3>
+                <p>Test your knowledge on <b>Smishing</b> attacks: Phishing attacks based on SMS and social media</p>
+                <div class="ui huge primary button" id="inactive-button">Coming Soon<i class="right arrow icon"></i></div>
+            </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

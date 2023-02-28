@@ -1,0 +1,34 @@
+{% extends 'layout.html' %} {% block content %}
+<div id="account">
+    <div class="ui vertical stripe segment">
+        <div class="ui middle aligned stackable grid container">
+            <h3 class="ui header">Hey, {{ session['user_name'] }}</h3>
+
+            <div>
+                <div>
+                    <h3 class="ui header">User Score: {{ score }}</h3>
+                </div>
+                
+                <br>
+                <br>
+                <br>
+
+                <div id="user-suggestions">
+                    {% if tag_length > 0 %}
+                        <h3 id="suggestions-title">Suggestions</h3>
+                        <p id="suggestion-head"><b>We've noticed a couple of things you could improve upon when looking out for phishing attacks... Heres {% if tag_length == 1 %}a tip to help you improve.{% else %}a couple of tipes to help you improve.{% endif %}</b></p>
+                        {% for message in suggestions %}
+                            <p id="suggestion-text"><b>></b> {{ message }}</p>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                
+            </div>
+
+            <div>
+                {% include 'leaderboard/leaderboard.html' %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

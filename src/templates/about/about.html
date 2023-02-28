@@ -1,0 +1,46 @@
+{% extends 'layout.html' %} {% block content %}
+<div class="ui vertical stripe segment">
+    <div class="ui middle aligned stackable grid container">
+        <div id="about-content">
+
+            <div class="ui vertical stripe segment">
+                <div class="ui middle aligned stackable grid container">
+                    <div class="row">
+                        <div class="eight wide column">
+                        <h3 class="ui header">Our Team</h3>
+                        <p>
+                            {{ content_dict['Our Team'] }}
+                        </p>
+                        
+                        </div>
+                        <div class="six wide right floated column">
+                            <img src="../../static/images/fish.gif">  
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br><br><br><br><br>
+            
+            <div>
+                <H1 id="about-content-heading">What we're all about</H1>
+                {% for item in content_dict['What we\'re all about'] %}
+                    <p id="about-content-text">{{ item }}</p>
+                {% endfor %}
+                <br><br>
+            </div>
+
+            <div>
+                <H1 id="about-content-heading" style="color: #F0E43C;">So, what is phishing?</H1>
+                {% for item in content_dict['So, what is phishing?'] %}
+                    <p id="about-content-text">{{ item }}</p>
+                    <br>
+                {% endfor %}
+                <br><br><br>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+

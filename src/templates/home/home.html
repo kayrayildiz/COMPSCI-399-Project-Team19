@@ -1,0 +1,92 @@
+{% extends 'layout.html' %} {% block content %}
+
+<div class="pusher">
+  <!-- Intro segment -->
+  <div class="ui inverted vertical masthead center aligned segment">
+    <div class="ui text container">
+      <h1 class="ui inverted header">Catching a Phish</h1>
+      <h2>The game for you.</h2>
+
+      {% if 'user_name' in session %}
+      <a class="item" href="{{ url_for('modules_bp.modules') }}">
+        <div class="ui huge primary button">Lets play<i class="right arrow icon"></i></div>
+
+
+      {% else %}
+      <a class="item" href="{{ url_for('authentication_bp.login') }}">
+        <div class="ui huge primary button">Lets play<i class="right arrow icon"></i></div>
+      </a>
+      {% endif %}
+      <a class="item" href="{{ url_for('walkthrough_bp.walkthrough') }}">
+        <button class="ui button">Walkthrough</button>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- Page content -->
+  <div class="ui vertical stripe segment">
+    <div class="ui middle aligned stackable grid container">
+      <div class="row">
+        <div class="eight wide column">
+          <h3 class="ui header">Catching A Phish is a web-based game application teaching users to apply psychological skills to combat modern Phishing attacks.</h3>
+          <p>
+            <a class="ui large button" href="{{ url_for('walkthrough_bp.walkthrough') }}">Take the tutorial</a>
+          </p>
+          <h3 class="ui header">So, what is phishing?</h3>
+            <a class="ui large button" href="{{ url_for('about_bp.about') }}">About</a>
+
+        </div>
+        <div class="six wide right floated column">
+          <iframe src="https://giphy.com/embed/26tk0aLx4Aj4lxx3W" width="480" height="368" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br><br>
+  <div class="ui vertical stripe quote segment">
+    <div class="ui equal width stackable internally celled grid">
+      <div class="center aligned row">
+        <div class="column">
+          <h3></h3>
+          <p>A <b>Team 19</b> Creation</p>
+        </div>
+        <div class="column">
+          <h3>Bruce Schneier</h3>
+          <p>"Amateurs hack systems, professionals hack people"<b></b></p>
+        </div>
+      </div>
+    </div>
+    <br><br>
+  </div>
+</div>
+    
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.js"></script>
+    
+<script>
+  $(document).ready(function() {
+    // fix menu when passed
+    $(".masthead").visibility({
+      once: false,
+      onBottomPassed: function() {
+        $(".fixed.menu").transition("fade in");
+      },
+      onBottomPassedReverse: function() {
+        $(".fixed.menu").transition("fade out");
+      }
+    });
+
+    // create sidebar and attach to menu open
+    $(".ui.sidebar").sidebar("attach events", ".toc.item");
+  });
+</script>
+
+
+{% endblock %}
+
+

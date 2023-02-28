@@ -1,0 +1,843 @@
+BabyYoda
+#7316
+
+DDDDD — Yesterday at 4:14 PM
+Okok
+BabyYoda — Yesterday at 4:14 PM
+all good bro haha
+DDDDD — Yesterday at 4:14 PM
+If he didn’t say anything, I will prob just remind him again
+BabyYoda — Yesterday at 4:14 PM
+thanks bro
+i have 6 people in my team
+4 from china
+hard to communicate
+and they not that active also
+DDDDD — Yesterday at 4:15 PM
+Yeah u know why
+BabyYoda — Yesterday at 4:15 PM
+so i am waiting for them to start on the assignment too
+DDDDD — Yesterday at 4:15 PM
+Cuz they use wechat
+To talk to each other
+BabyYoda — Yesterday at 4:15 PM
+yeah
+we made a discord group
+but apparently most of them talk to each other some other way
+i have 1 indian guy in my team but he also does stuff last min
+DDDDD — Yesterday at 4:16 PM
+Especially with Chinese ppl, they will definitely discuss the assignment together, however with lack of “abilities “ to communicate with other students in English, they will form their own little groups discussing the assignment in Chinese
+BabyYoda — Yesterday at 4:16 PM
+they all doing stuff last min lol
+BabyYoda — Yesterday at 4:16 PM
+oh
+like last tutorial i did most of the work myself too
+and they didnt do much lol
+DDDDD — Yesterday at 4:17 PM
+O
+BabyYoda — Yesterday at 4:17 PM
+idk why i get teams like this
+DDDDD — Yesterday at 4:17 PM
+Bruh
+Maybe tell them to do more work in the gc
+?
+BabyYoda — Yesterday at 4:17 PM
+the chinese girl is good
+she is a bit more active
+but the rest lol
+i did
+just waiting for them now
+DDDDD — Yesterday at 4:17 PM
+Do u have her name tho?
+The Chinese girl
+BabyYoda — Yesterday at 4:17 PM
+i am currently catching up 331 for the test
+DDDDD — Yesterday at 4:17 PM
+Is she called Amy or something?
+BabyYoda — Yesterday at 4:17 PM
+XinLin Li
+idk her English name
+DDDDD — Yesterday at 4:18 PM
+Rifht
+Same
+I am up to week 9s lecture for 331
+BabyYoda — Yesterday at 4:19 PM
+same lol
+DDDDD — Yesterday at 4:19 PM
+Mostly just theory
+BabyYoda — Yesterday at 4:19 PM
+yeah
+i am trying to do better this time
+kinda just wanna pass atm
+lol
+but if i can get B or B+ that would be great
+DDDDD — Yesterday at 4:19 PM
+Yeah
+I mean look at 335
+Hahahha
+BabyYoda — Yesterday at 4:19 PM
+not sure how well we did the project too
+BabyYoda — Yesterday at 4:19 PM
+true
+but 335 test  1 was great
+i got 15/20
+actually 17 or 18
+and that had double pass
+this doesnt
+DDDDD — Yesterday at 4:21 PM
+Yeah
+True
+BabyYoda — Yesterday at 4:21 PM
+we got 15% assignment and 20% test
+DDDDD — Yesterday at 4:21 PM
+When is the test 2 again
+Next Tuesday?
+BabyYoda — Yesterday at 4:21 PM
+even if we get half for both thats a guaranteed pass
+thursday 6pm
+DDDDD — Yesterday at 4:22 PM
+Shiiiit
+Ok I really need to catch it up
+Lol
+BabyYoda — Yesterday at 4:22 PM
+yeah same haha
+DDDDD — Yesterday at 4:23 PM
+also btw
+if u have time
+would u mind pass these two codes into our projects for 399
+{% extends 'layout.html' %} {% block content %}
+
+<html>
+
+<head>
+    <style>
+  input[type=button]{
+  background-color: #F5FFFA;
+  border: none;
+  color: black;
+  padding: 2px 4px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius:60px 60px 60px 60px
+
+}
+input[type=button]:hover {
+  background-color: #87CEFA;
+  border: none;
+  color: black;
+  padding: 2px 4px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius:60px 60px 60px 60px
+
+}
+</style>
+
+</head>
+<body>
+    <form action="/submitquiz2" method="post">
+        <div class="quiz2Content">
+            <div class="scoreQ2" >
+                <p>{{session['user_name'] }}'s score: {{ score }}</p>
+
+            </div>
+
+          <br><br>
+            <!-- {% if not results %} -->
+
+
+                            <div id="quiz2Q">
+
+                                <p>{{question.getQ_id()}}. {{question.getQuestion()}}</p> <br>
+
+                            </div>
+            <br>
+            <br>
+                            <div id="quizOption">
+                            <a href="{{ url_for('submit_bp2.submit2', page_number = current_page, option = 1) }}">
+                                <input class="submit" type="button" value="1">
+                            </a>
+                            {{question.getOption1()}}
+                            <br>
+
+                            <a href="{{ url_for('submit_bp2.submit2', page_number = current_page, option = 2) }}">
+                                <input class="submit" type="button" value="2">
+                            </a>
+                            {{question.getOption2()}}<br>
+
+                            <a href="{{ url_for('submit_bp2.submit2', page_number = current_page, option = 3) }}">
+                                <input class="submit" type="button" value="3">
+                            </a>
+                            {{question.getOption3()}}<br>
+                            <a href="{{ url_for('submit_bp2.submit2', page_number = current_page, option = 4) }}">
+                                <input class="submit" type="button" value=4>
+                            </a>
+                            {{question.getOption4()}}<br>
+                            </div>
+            <!-- {% elif results %} -->
+
+
+            <br>
+            <br>
+            {% if quiz_result %}
+                        <div id="result2C">
+                            {% include 'quiz/result2.html' %}
+                        </div>
+            {% else %}
+                        <div id="result2W">
+                            {% include 'quiz/result2.html' %}
+                        </div>
+            {% endif %}
+                        <!-- {% endif %} -->
+
+
+
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        </div>
+        <div class="quiz-pagination-footer">
+            {% include 'quiz/pagination2.html' %}
+        </div>
+
+    </form>
+
+
+</body>
+</html>
+
+{% endblock %}
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: grayscale;
+    background-color: #41506b;
+    /* background: radial-gradient(ellipse farthest-corner at center top, #91b0ea 0%, #2e384c 100%); */
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: grayscale;
+    background-color: #41506b;
+    /* background: radial-gradient(ellipse farthest-corner at center top, #91b0ea 0%, #2e384c 100%); */
+}
+
+.hidden.menu {
+    display: none;
+}
+
+/* Homepage head segment */
+.masthead.segment {
+    min-height: 600px;
+    padding: 1em 0em;
+}
+
+.masthead .logo.item img {
+    margin-right: 1em;
+}
+
+.masthead .ui.menu .ui.button {
+    margin-left: 0.5em;
+}
+
+.masthead h1.ui.header {
+    margin-top: 2em;
+    margin-bottom: 0em;
+    font-size: 4em;
+    font-weight: normal;
+}
+
+.masthead h2 {
+    font-size: 1.7em;
+    font-weight: normal;
+}
+
+/* Header */
+.head.segment {
+    min-height: 50px;
+    padding: 1em 0em;
+}
+
+.head .logo.item img {
+    margin-right: 1em;
+}
+
+.head .ui.menu .ui.button {
+    margin-left: 0.5em;
+}
+
+.head h1.ui.header {
+    margin-top: 2em;
+    margin-bottom: 0em;
+    font-size: 4em;
+    font-weight: normal;
+}
+
+.head h2 {
+    font-size: 1.7em;
+    font-weight: normal;
+}
+
+/* Header active */
+@media only screen and (max-width: 700px) {
+    .ui.fixed.menu {
+        display: none !important;
+    }
+
+    .secondary.pointing.menu .item, .secondary.pointing.menu .menu {
+        display: none;
+    }
+
+    .secondary.pointing.menu .toc.item {
+        display: block;
+    }
+
+    .masthead.segment {
+        min-height: 350px;
+    }
+
+    .masthead h1.ui.header {
+        font-size: 2em;
+        margin-top: 1.5em;
+    }
+
+    .masthead h2 {
+        margin-top: 0.5em;
+        font-size: 1.5em;
+    }
+}
+
+/* Home */
+.ui.vertical.stripe {
+    padding: 8em 0em;
+}
+
+.ui.vertical.stripe h3 {
+    font-size: 2em;
+}
+
+.ui.vertical.stripe .button + h3, .ui.vertical.stripe p + h3 {
+    margin-top: 3em;
+}
+
+.ui.vertical.stripe .floated.image {
+    clear: both;
+}
+
+.ui.vertical.stripe p {
+    font-size: 1.33em;
+}
+
+.ui.vertical.stripe .horizontal.divider {
+    margin: 3em 0em;
+}
+
+.quote.stripe.segment {
+    padding: 0em;
+}
+
+.quote.stripe.segment .grid .column {
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
+
+/* Footer */
+.footer.segment {
+    padding: 5em 0em;
+}
+
+.footer.segment li {
+    color: grey;
+    display: inline-block;
+}
+
+.footer.segment li p {
+    color: grey;
+    display: inline-block;
+    position: relative;
+    padding-left: 15px;
+}
+
+.secondary.pointing.menu .toc.item {
+    display: none;
+}
+
+/* Login */
+.ui.label.aa {
+  background-color: #41506b;
+  font-size: 14px;
+  color: red;
+}
+
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: grayscale;
+    background-color: #41506b;
+}
+
+.hidden.menu {
+    display: none;
+}
+
+/* Homepage head segment */
+.masthead.segment {
+    min-height: 600px;
+    padding: 1em 0em;
+}
+
+.masthead .logo.item img {
+    margin-right: 1em;
+}
+
+.masthead .ui.menu .ui.button {
+    margin-left: 0.5em;
+}
+
+.masthead h1.ui.header {
+    margin-top: 2em;
+    margin-bottom: 0em;
+    font-size: 4em;
+    font-weight: normal;
+}
+
+.masthead h2 {
+    font-size: 1.7em;
+    font-weight: normal;
+}
+
+/* Header */
+.head.segment {
+    min-height: 50px;
+    padding: 1em 0em;
+}
+
+.head .logo.item img {
+    margin-right: 1em;
+}
+
+.head .ui.menu .ui.button {
+    margin-left: 0.5em;
+}
+
+.head h1.ui.header {
+    margin-top: 2em;
+    margin-bottom: 0em;
+    font-size: 4em;
+    font-weight: normal;
+}
+
+.head h2 {
+    font-size: 1.7em;
+    font-weight: normal;
+}
+
+/* Header active */
+@media only screen and (max-width: 700px) {
+    .ui.fixed.menu {
+        display: none !important;
+    }
+
+    .secondary.pointing.menu .item, .secondary.pointing.menu .menu {
+        display: none;
+    }
+
+    .secondary.pointing.menu .toc.item {
+        display: block;
+    }
+
+    .masthead.segment {
+        min-height: 350px;
+    }
+
+    .masthead h1.ui.header {
+        font-size: 2em;
+        margin-top: 1.5em;
+    }
+
+    .masthead h2 {
+        margin-top: 0.5em;
+        font-size: 1.5em;
+    }
+}
+
+/* Home */
+.ui.vertical.stripe {
+    padding: 8em 0em;
+}
+
+.ui.vertical.stripe h3 {
+    font-size: 2em;
+}
+
+.ui.vertical.stripe .button + h3, .ui.vertical.stripe p + h3 {
+    margin-top: 3em;
+}
+
+.ui.vertical.stripe .floated.image {
+    clear: both;
+}
+
+.ui.vertical.stripe p {
+    font-size: 1.33em;
+}
+
+.ui.vertical.stripe .horizontal.divider {
+    margin: 3em 0em;
+}
+
+.quote.stripe.segment {
+    padding: 0em;
+}
+
+.quote.stripe.segment .grid .column {
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
+
+/* Footer */
+.footer.segment {
+    padding: 5em 0em;
+}
+
+.footer.segment li {
+    color: grey;
+    display: inline-block;
+}
+
+.footer.segment li p {
+    color: grey;
+    display: inline-block;
+    position: relative;
+    padding-left: 15px;
+}
+
+.secondary.pointing.menu .toc.item {
+    display: none;
+}
+
+/* Login */
+
+.ui.label.aa {
+  background-color: #41506b;
+  font-size: 14px;
+  color: red;
+}
+
+/* login/register pages */
+#authentication {
+    margin: 20% 45% 20% 42%;
+    background-color: #41506b;
+}
+
+/* modules page */
+#modules {
+    margin-top: 20%;
+    margin-bottom: 20%;
+}
+
+/* user account page */
+#account {
+    margin-top: 10%;
+    margin-bottom: 20%;
+}
+
+#account #user-suggestions #suggestions-title {
+    color: #F0E43C;
+}
+
+#account #user-suggestions #suggestion-text, #suggestion-head {
+    width: 60%;
+    text-align: justify;
+}
+
+/* quiz pages */
+#quiz, #resolutions, #results {
+    margin-top: 15%;
+    margin-bottom: 20%;
+}
+
+#quiz-form {
+    width: 100%;
+}
+
+#quiz-container {
+    width: 100%;
+}
+
+#sender-address {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+
+#sender-icon img {
+    display: inline-block;
+    height: 40px;
+    margin-right: 20px;
+}
+
+#quiz-results-correct {
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #bbfccd;
+}
+
+#quiz-results-incorrect {
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #ffb8b8;
+}
+
+#inactive-button {
+    color: lightgrey;
+    background-color: grey;
+}
+
+/* pagination styles */
+.pagination {
+    width: 100%;
+    background-color: #4CAF50;
+}
+
+
+/* leaderboard */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.leaderboard {
+    position: absolute;
+    top: 50%;
+    left: 80%;
+
+    transform: translate(-50%, -50%);
+    width: 285px;
+    height: 308px;
+    background: linear-gradient(to bottom, #3a404d, #181c26);
+    border-radius: 10px;
+    box-shadow: 0 7px 30px rgba(62, 9, 11, .3);
+}
+.leaderboard h1 {
+    font-size: 18px;
+    color: #e1e1e1;
+    padding: 12px 13px 18px;
+}
+.leaderboard h1 svg {
+    width: 25px;
+    height: 26px;
+    position: relative;
+    top: 3px;
+    margin-right: 6px;
+    vertical-align: baseline;
+}
+.leaderboard ol {
+    counter-reset: leaderboard;
+    margin-left: -40px;
+}
+.leaderboard ol li {
+    /*position: relative;*/
+    /*z-index: 1;*/
+    font-size: 14px;
+    counter-increment: leaderboard;
+    padding: 18px 10px 18px 50px;
+    cursor: pointer;
+    backface-visibility: hidden;
+    transform: translateZ(0) scale(1, 1);
+}
+.leaderboard ol li::before {
+    content: counter(leaderboard);
+    position: absolute;
+    /*z-index: 2;*/
+    top: 15px;
+    left: 15px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    color: #3a404d;
+    background: #fff;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.leaderboard ol li::marker {
+    content: none;
+}
+
+.leaderboard ol li mark {
+    position: absolute;
+    /*z-index: 2;*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 18px 10px 18px 50px;
+    margin: 0;
+    background: none;
+    color: #fff;
+}
+
+.leaderboard ol li small {
+    position: relative;
+    /*z-index: 2;*/
+    display: block;
+    text-align: right;
+}
+
+.leaderboard ol li:nth-child(1) {
+    background: #68728b;
+}
+.leaderboard ol li:nth-child(2) {
+    background: #5d667c;
+}
+.leaderboard ol li:nth-child(3) {
+    background: #50586b;
+}
+.leaderboard ol li:nth-child(4) {
+    background: #454c5c;
+}
+.leaderboard ol li:nth-child(5) {
+    background: #3a404d;
+    border-radius: 0 0 10px 10px;
+}
+
+
+/*  */
+.the-most {
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    width: 50vw;
+    max-width: 200px;
+    padding: 10px;
+}
+.the-most img {
+    max-width: 100%;
+}
+
+/* quiz 2 related css are here */
+
+.quiz2Content{
+    font-size: 100%;
+    background-color: #41506b;
+    font-family: sans-serif;
+    color: black;
+    padding: 40px;
+    margin-top: 10%;
+    margin-bottom: 20%;
+
+
+}
+p.question {
+  font-weight: bold;
+  font-size: 100%;
+}
+
+input[type=submit] {
+    padding:5px 15px;
+    background:#ccc;
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#quizOption{
+
+    font-size: 120%;
+    font-family: Segoe UI;
+
+    /*text-align: center;*/
+}
+
+#quiz2Q{
+    font-weight: bold;
+    font-size: 160%;
+    font-family: Trebuchet MS;
+
+    /*text-align: center;*/
+}
+/* resolutions html related css are here */
+
+.solution{
+    background-color: #FAEBD7;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    padding: 40px;
+}
+
+
+#reasons{
+    background-color: #DEB887;
+    /*text-align: center;*/
+}
+
+#solutionH{
+    font-size: 200%;
+    font-weight: bold;
+    text-align: center;
+}
+
+#solutionQ{
+    font-weight: bold;
+}
+/* result2 html related css are here */
+
+#qresult{
+    font-weight: bold;
+    font-size: 200%;
+}
+#result2C{
+    background-color: #bbfccd;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    padding: 5px;
+    border-radius: 5px;
+
+}
+
+#result2W{
+    background-color: #ffb8b8;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    padding: 5px;
+    border-radius: 5px;
+
+}
+
+.scoreQ2{
+    position: absolute;
+    font-weight: bold;
+    font-size: 125%;
+    left: 1600px;
+    top: 100px;
+    background-color: #FFA07A;
+    border-radius: 25px;
+}
+
+.pagination {
+    border-radius: 5px;
+    position: relative;
+    width: 535px;
+
+.pagination2 {
+    border-radius: 5px;
+    position: relative;
+    width: 785px;
+

@@ -1,0 +1,92 @@
+{% extends 'layout.html' %} {% block content %}
+<div id="quiz">
+    <div class="ui middle aligned stackable grid container">
+        <div id="quiz-container">
+        <div id="quiz-form">
+            <form action="/submitquiz" method="post">
+                <div class="ui fluid card">
+                    <div class="content">
+                        <p class="header">Question {{ question.question_id }}</p>
+
+                        <div class="meta">
+                            <span class="date">Is this email a phish or a genuine voucher?</span>
+                        </div>
+
+                        <br>
+
+                        <div id="quiz-header">
+                            {% include 'quiz/header.html' %}
+                        </div>
+
+                        <br>
+                        <div class="header">
+                            {{ question.email_subject }}
+                        </div>
+                        <br>
+
+                        <div id="quiz-email">
+                            <div id="sender-address">
+                                <div id="sender-icon">
+                                    <img src="../../static/images/sender.png">
+                                </div>
+                                <div>
+                                    <p><b>From: {{ question.sender_address }}</b></p>
+                                    <p>To: {{ session['user_name'] }}@mail.com</p>
+                                </div>
+                            </div>
+
+                            <br>
+
+                            <div class="description">
+                                {% for list in question.email_content_list_of_lists %}
+                                    {{ list.replace("\\n", " ").
+                                    replace("[first_name]", session['user_name']).
+
+                                    replace("[last_name]", "").
+                                    replace("@session['user_name']", session['user_name']+"@mail.com").
+                                    replace("[insert py dateTime.now]", ('14-05-22.'))
+                                    }}
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <br>
+
+                        {% if not results %}
+                        <div class="extra content">
+
+                            <a href="{{ url_for('submit_bp.submit', page_number = current_page, option = 1) }}">
+                                <input class="ui button" value="Legitimate">
+                            </a>
+
+                            <a href="{{ url_for('submit_bp.submit', page_number = current_page, option = 0) }}">
+                                <input class="ui button" value="Illegitimate">
+                            </a>
+
+                        {% elif results %}
+                            {% if quiz_result %}
+                                <div id="quiz-results-correct">
+                                    {% include 'quiz/result.html' %}
+                                </div>
+                            {% else %}
+                                <div id="quiz-results-incorrect">
+                                    {% include 'quiz/result.html' %}
+                                </div>
+                            {% endif %}
+                        {% endif %}
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <br><br>
+
+        <div class="quiz-pagination-footer">
+            {% include 'quiz/pagination.html' %}
+        </div>
+    </div>
+    </div>
+
+</div>
+
+{% endblock %}
